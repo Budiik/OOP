@@ -1,29 +1,37 @@
 package GUI;
 import User.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.EventListener;
+import java.util.EventObject;
 
 public class questionareController extends controller {
     @FXML
-    public ChoiceBox holidayType;
+    private ChoiceBox holidayType;
     @FXML
-    public Slider tempRange;
+    private Slider tempRange;
     @FXML
-    public Slider distanceRange;
+    private Slider distanceRange;
     @FXML
-    public Slider priceRange;
+    private Slider priceRange;
     @FXML
-    public Text tempNumber;
+    private Text tempNumber;
     @FXML
-    public Text distanceNumber;
+    private Text distanceNumber;
     @FXML
-    public Text priceNumber;
-
+    private Text priceNumber;
+    @FXML
+    private Button doneButton;
 
 
 
@@ -33,40 +41,58 @@ public class questionareController extends controller {
 
     }
 
+    public void doneButton(EventObject event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("userPage.fxml"));
+        userPageController controller = new userPageController(user);
+        loader.setController(controller);
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
     public void initialize() {
         holidayType.getItems().addAll("U mora", "Turistika", "Lyžovanie", "Spoznávacia");
-        holidayType.setValue(user.holidayType);
+        holidayType.setValue(user.getHolidayType());
         holidayType.setOnAction(event -> {
             user.setHolidayType(holidayType.getValue().toString());
         });
 
-        priceRange.setValue(user.priceRange);
-        priceNumber.setText(String.valueOf(user.priceRange) + " €");
+        priceRange.setValue(user.getPriceRange());
+        priceNumber.setText(String.valueOf(user.getPriceRange()) + " €");
         priceRange.valueProperty().addListener((observable, oldValue, newValue) -> {
             user.setPriceRange(newValue.intValue());
             priceNumber.setText(String.valueOf(newValue.intValue()) + " €");
             userManager.updateUser(user);
         });
 
-        tempRange.setValue(user.tempRange);
-        tempNumber.setText(String.valueOf(user.tempRange) + " °C");
+        tempRange.setValue(user.getTemp());
+        tempNumber.setText(String.valueOf(user.getTemp()) + " °C");
         tempRange.valueProperty().addListener((observable, oldValue, newValue) -> {
-            user.setTempRange(newValue.intValue());
+            user.setTemp(newValue.intValue());
             tempNumber.setText(String.valueOf(newValue.intValue()) + " °C");
             userManager.updateUser(user);
         });
 
-        distanceRange.setValue(user.distanceRange);
-        distanceNumber.setText(String.valueOf(user.distanceRange) + " km");
+        distanceRange.setValue(user.getDistanceRange());
+        distanceNumber.setText(String.valueOf(user.getDistanceRange()) + " km");
         distanceRange.valueProperty().addListener((observable, oldValue, newValue) -> {
             user.setDistanceRange(newValue.intValue());
             distanceNumber.setText(String.valueOf(newValue.intValue()) + " km");
             userManager.updateUser(user);
         });
 
+        doneButton.setOnAction(event -> {
+            try {
+                doneButton(event);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
 
 

@@ -6,10 +6,12 @@ public class User implements Serializable {
     private String username;
     private String password;
 
-    public int priceRange;
-    public int distanceRange;
-    public int tempRange;
-    public String holidayType;
+    private int numberOfOrders;
+
+    private int priceRange;
+    private int distanceRange;
+    private int temp;
+    private String holidayType;
 
     public void setHolidayType(String e){
         this.holidayType = e;
@@ -20,9 +22,29 @@ public class User implements Serializable {
     public void setDistanceRange(int e){
         this.distanceRange = e;
     }
-    public void setTempRange(int e){
-        this.tempRange = e;
+    public void setTemp(int e){
+        this.temp = e;
     }
+    public void addNumberOfOrders(){
+        this.numberOfOrders ++;
+    }
+    public int getNumberOfOrders(){
+        return this.numberOfOrders;
+    }
+
+    public int getPriceRange(){
+        return priceRange;
+    }
+    public int getDistanceRange(){
+        return distanceRange;
+    }
+    public int getTemp(){
+        return temp;
+    }
+    public String getHolidayType(){
+        return holidayType;
+    }
+
 
     public String getUsername(){
         return this.username;
@@ -32,9 +54,9 @@ public class User implements Serializable {
     }
 
     public User(String username, String password) {
-        this.priceRange = 0;
-        this.distanceRange = 0;
-        this.tempRange = 0;
+        this.priceRange = 200;
+        this.distanceRange = 100;
+        this.temp = 0;
         this.holidayType = "";
         this.username = username;
         this.password = password;
