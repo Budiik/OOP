@@ -6,6 +6,8 @@ module Projekt {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires com.almasb.fxgl.all;
+    requires org.jsoup;
+    requires json.simple;
 
     opens GUI to javafx.fxml;
     exports GUI;

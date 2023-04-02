@@ -14,7 +14,16 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import User.*;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class registerController extends controller{
 
@@ -48,23 +57,28 @@ public class registerController extends controller{
         stage.show();
     }
 
+
     public void takeCredentials(ActionEvent event) throws IOException {
         String usernameText = username.getText();
         String passwordText = password.getText();
         String passwordAgainText = passwordAgain.getText();
-
-
-        if (passwordText.equals(passwordAgainText)){
-            User user = new User(usernameText, passwordText);
-            if (!userManager.userExists(user)){
-                userManager.addUser(user);
-                errorText.setFill(Color.GREEN);
-                errorText.setText("Account created succesfully");
-            }else {
-                errorText.setFill(Color.RED);
-                errorText.setText("Username taken");
+        try {
+            if (passwordText.equals(passwordAgainText)) {
+                User user = new User(usernameText, passwordText);
+                if (!userManager.userExists(user)) {
+                    userManager.addUser(user);
+                    errorText.setFill(Color.GREEN);
+                    errorText.setText("Account created successfully");
+                } else {
+                    errorText.setFill(Color.RED);
+                    errorText.setText("Username taken");
+                }
+            } else {
+                throw new Exception("Passwords don't match");
             }
-
+        } catch (Exception e) {
+            errorText.setFill(Color.RED);
+            errorText.setText(e.getMessage());
         }
 
     }

@@ -10,8 +10,15 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Slider;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.EventListener;
 import java.util.EventObject;
 
@@ -52,21 +59,31 @@ public class questionareController extends controller {
         stage.show();
     }
 
+
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    public void initialize() {
-        holidayType.getItems().addAll("U mora", "Turistika", "Lyžovanie", "Spoznávacia");
+    public void initialize() throws IOException {
+
+
+
+        holidayType.getItems().addAll(user.getHolidayOptions());
         holidayType.setValue(user.getHolidayType());
         holidayType.setOnAction(event -> {
             user.setHolidayType(holidayType.getValue().toString());
+            userManager.updateUser(user);
         });
 
         priceRange.setValue(user.getPriceRange());
-        priceNumber.setText(String.valueOf(user.getPriceRange()) + " €");
+        String euro = " €";
+        priceNumber.setText(String.valueOf(user.getPriceRange()) + euro);
         priceRange.valueProperty().addListener((observable, oldValue, newValue) -> {
             user.setPriceRange(newValue.intValue());
-            priceNumber.setText(String.valueOf(newValue.intValue()) + " €");
+            priceNumber.setText(String.valueOf(newValue.intValue()) + euro);
+            if (newValue.intValue() == 5000){
+                priceNumber.setText(String.valueOf(newValue.intValue()) + "+" + euro);
+            }
             userManager.updateUser(user);
         });
 

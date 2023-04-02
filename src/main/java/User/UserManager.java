@@ -40,6 +40,10 @@ public class UserManager {
         }
         return null;
     }
+    public void deleteUser(User user) {
+        users.remove(user);
+        saveUsers();
+    }
 
     public boolean userExists(User passedUser){
         for (User user : users) {

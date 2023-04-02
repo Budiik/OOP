@@ -17,7 +17,6 @@ public class Maingui extends Application{
         FXMLLoader loader = new FXMLLoader(Maingui.class.getResource("login.fxml"));
         loginController controller = new loginController();
 
-
         loader.setController(controller);
         root = loader.load();
         controller.setStage(primaryStage);

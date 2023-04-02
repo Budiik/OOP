@@ -1,0 +1,700 @@
+{
+  "Lyžovanie": [
+  {
+    "name": "Whistler Blackcomb",
+    "country": "Canada",
+    "distance_from_bratislava": 8928,
+    "average_temp": -5
+  },
+  {
+    "name": "St. Moritz",
+    "country": "Switzerland",
+    "distance_from_bratislava": 614,
+    "average_temp": -3
+  },
+  {
+    "name": "Aspen Snowmass",
+    "country": "United States",
+    "distance_from_bratislava": 8454,
+    "average_temp": -6
+  },
+  {
+    "name": "Chamonix",
+    "country": "France",
+    "distance_from_bratislava": 903,
+    "average_temp": -5
+  },
+  {
+    "name": "Kitzbühel",
+    "country": "Austria",
+    "distance_from_bratislava": 421,
+    "average_temp": -5
+  },
+  {
+    "name": "Vail",
+    "country": "United States",
+    "distance_from_bratislava": 8320,
+    "average_temp": -7
+  },
+  {
+    "name": "Courchevel",
+    "country": "France",
+    "distance_from_bratislava": 990,
+    "average_temp": -6
+  },
+  {
+    "name": "Banff-Lake Louise",
+    "country": "Canada",
+    "distance_from_bratislava": 8091,
+    "average_temp": -8
+  },
+  {
+    "name": "Zermatt",
+    "country": "Switzerland",
+    "distance_from_bratislava": 720,
+    "average_temp": -6
+  },
+  {
+    "name": "Park City",
+    "country": "United States",
+    "distance_from_bratislava": 9385,
+    "average_temp": -7
+  },
+  {
+    "name": "Sölden",
+    "country": "Austria",
+    "distance_from_bratislava": 529,
+    "average_temp": -4
+  },
+  {
+    "name": "Cortina d'Ampezzo",
+    "country": "Italy",
+    "distance_from_bratislava": 371,
+    "average_temp": -4
+  },
+  {
+    "name": "Zell am See-Kaprun",
+    "country": "Austria",
+    "distance_from_bratislava": 361,
+    "average_temp": -6
+  },
+  {
+    "name": "Mammoth Mountain",
+    "country": "United States",
+    "distance_from_bratislava": 9676,
+    "average_temp": -3
+  },
+  {
+    "name": "Val d'Isère",
+    "country": "France",
+    "distance_from_bratislava": 953,
+    "average_temp": -6
+  },
+  {
+    "name": "Lech-Zürs am Arlberg",
+    "country": "Austria",
+    "distance_from_bratislava": 612,
+    "average_temp": -5
+  },
+  {
+    "name": "Telluride",
+    "country": "United States",
+    "distance_from_bratislava": 9100,
+    "average_temp": -6
+  },
+  {
+    "name": "St. Anton am Arlberg",
+    "country": "Austria",
+    "distance_from_bratislava": 612,
+    "average_temp": -5
+  },
+  {
+    "name": "Verbier",
+    "country": "Switzerland",
+    "distance_from_bratislava": 1000,
+    "average_temp": -5
+  },
+  {
+    "name": "Jackson Hole",
+    "country": "United States",
+    "distance_from_bratislava": 9100,
+    "average_temp": -6
+  },
+  {
+    "name": "Niseko United",
+    "country": "Japan",
+    "distance_from_bratislava": 11000,
+    "average_temp": -2
+  },
+  {
+    "name": "Kicking Horse",
+    "country": "Canada",
+    "distance_from_bratislava": 8000,
+    "average_temp": -8
+  },
+  {
+    "name": "Cervinia",
+    "country": "Italy",
+    "distance_from_bratislava": 1000,
+    "average_temp": -5
+  },
+  {
+    "name": "Whistler Blackcomb",
+    "country": "Canada",
+    "distance_from_bratislava": 8928,
+    "average_temp": -5
+  },
+  {
+    "name": "St. Moritz",
+    "country": "Switzerland",
+    "distance_from_bratislava": 614,
+    "average_temp": -3
+  },
+  {
+    "name": "Aspen Snowmass",
+    "country": "United States",
+    "distance_from_bratislava": 8454,
+    "average_temp": -6
+  },
+  {
+    "name": "Chamonix",
+    "country": "France",
+    "distance_from_bratislava": 903,
+    "average_temp": -5
+  }],
+
+
+
+
+
+
+
+
+
+  "pri mori": [{
+    "name": "Cala Comte Beach",
+    "country": "Spain",
+    "average_temp": 26,
+    "distance_from_bratislava": 1753
+  },
+  {
+    "name": "Sorrento Coast",
+    "country": "Italy",
+    "average_temp": 27,
+    "distance_from_bratislava": 1031
+  },
+  {
+    "name": "Copacabana Beach",
+    "country": "Brazil",
+    "average_temp": 27,
+    "distance_from_bratislava": 10662
+  },
+  {
+    "name": "Ha Long Bay",
+    "country": "Vietnam",
+    "average_temp": 28,
+    "distance_from_bratislava": 9081
+  },
+  {
+    "name": "Kata Beach",
+    "country": "Thailand",
+    "average_temp": 28,
+    "distance_from_bratislava": 9217
+  },
+  {
+    "name": "Mykonos Island",
+    "country": "Greece",
+    "average_temp": 26,
+    "distance_from_bratislava": 1565
+  },
+  {
+    "name": "Flic-en-Flac Beach",
+    "country": "Mauritius",
+    "average_temp": 26,
+    "distance_from_bratislava": 8791
+  },
+  {
+    "name": "Nusa Dua Beach",
+    "country": "Indonesia",
+    "average_temp": 28,
+    "distance_from_bratislava": 10591
+  },
+  {
+    "name": "Cala de Sant Vicent",
+    "country": "Spain",
+    "average_temp": 26,
+    "distance_from_bratislava": 1533
+  },
+  {
+    "name": "Nissi Beach",
+    "country": "Cyprus",
+    "average_temp": 28,
+    "distance_from_bratislava": 1695
+  },{
+    "name": "La Concha Beach",
+    "country": "Spain",
+    "average_temp": 24,
+    "distance_from_bratislava": 1528
+  },
+  {
+    "name": "Baia do Sancho",
+    "country": "Brazil",
+    "average_temp": 27,
+    "distance_from_bratislava": 9974
+  },
+  {
+    "name": "Phi Phi Islands",
+    "country": "Thailand",
+    "average_temp": 28,
+    "distance_from_bratislava": 9217
+  },
+  {
+    "name": "Maldive Islands",
+    "country": "Maldives",
+    "average_temp": 28,
+    "distance_from_bratislava": 6978
+  },
+  {
+    "name": "Cape of Good Hope",
+    "country": "South Africa",
+    "average_temp": 22,
+    "distance_from_bratislava": 9653
+  },
+  {
+    "name": "Nha Trang Bay",
+    "country": "Vietnam",
+    "average_temp": 28,
+    "distance_from_bratislava": 9081
+  },
+  {
+    "name": "Anse Lazio Beach",
+    "country": "Seychelles",
+    "average_temp": 28,
+    "distance_from_bratislava": 7057
+  },
+  {
+    "name": "Boracay Island",
+    "country": "Philippines",
+    "average_temp": 28,
+    "distance_from_bratislava": 10018
+  },
+  {
+    "name": "Dubrovnik Riviera",
+    "country": "Croatia",
+    "average_temp": 26,
+    "distance_from_bratislava": 578
+  },
+  {
+    "name": "Gulangyu Island",
+    "country": "China",
+    "average_temp": 27,
+    "distance_from_bratislava": 8531
+  },{
+    "name": "Costa del Sol",
+    "country": "Spain",
+    "average_temp": 27,
+    "distance_from_bratislava": 2008
+  },
+  {
+    "name": "Cayo Coco",
+    "country": "Cuba",
+    "average_temp": 28,
+    "distance_from_bratislava": 8376
+  },
+  {
+    "name": "The Hamptons",
+    "country": "USA",
+    "average_temp": 24,
+    "distance_from_bratislava": 6658
+  },
+  {
+    "name": "Tulum Beach",
+    "country": "Mexico",
+    "average_temp": 28,
+    "distance_from_bratislava": 9265
+  },
+  {
+    "name": "Cape Town Beaches",
+    "country": "South Africa",
+    "average_temp": 22,
+    "distance_from_bratislava": 9653
+  }],
+
+
+
+
+
+
+
+  "spoznávacia": [
+    {
+      "name": "Machu Picchu",
+      "country": "Peru",
+      "average_temp": 20,
+      "distance_from_bratislava": 11184
+    },
+    {
+      "name": "Santorini",
+      "country": "Greece",
+      "average_temp": 22,
+      "distance_from_bratislava": 1847
+    },
+    {
+      "name": "Grand Canyon",
+      "country": "USA",
+      "average_temp": 13,
+      "distance_from_bratislava": 9697
+    },
+    {
+      "name": "Petra",
+      "country": "Jordan",
+      "average_temp": 25,
+      "distance_from_bratislava": 3409
+    },
+    {
+      "name": "Uluru",
+      "country": "Australia",
+      "average_temp": 32,
+      "distance_from_bratislava": 16064
+    },
+    {
+      "name": "Taj Mahal",
+      "country": "India",
+      "average_temp": 27,
+      "distance_from_bratislava": 5416
+    },
+    {
+      "name": "Great Wall of China",
+      "country": "China",
+      "average_temp": 12,
+      "distance_from_bratislava": 7448
+    },
+    {
+      "name": "Eiffel Tower",
+      "country": "France",
+      "average_temp": 15,
+      "distance_from_bratislava": 1241
+    },
+    {
+      "name": "Bora Bora",
+      "country": "French Polynesia",
+      "average_temp": 27,
+      "distance_from_bratislava": 18810
+    },
+    {
+      "name": "Cape Town",
+      "country": "South Africa",
+      "average_temp": 20,
+      "distance_from_bratislava": 8658
+    },
+    {
+      "name": "Sydney Opera House",
+      "country": "Australia",
+      "average_temp": 22,
+      "distance_from_bratislava": 16064
+    },
+    {
+      "name": "Colosseum",
+      "country": "Italy",
+      "average_temp": 16,
+      "distance_from_bratislava": 1241
+    },
+    {
+      "name": "Machu Picchu",
+      "country": "Peru",
+      "average_temp": 20,
+      "distance_from_bratislava": 11184
+    },
+    {
+      "name": "Santorini",
+      "country": "Greece",
+      "average_temp": 22,
+      "distance_from_bratislava": 1847
+    },
+    {
+      "name": "Grand Canyon",
+      "country": "USA",
+      "average_temp": 13,
+      "distance_from_bratislava": 9697
+    },
+    {
+      "name": "Petra",
+      "country": "Jordan",
+      "average_temp": 25,
+      "distance_from_bratislava": 3409
+    },
+    {
+      "name": "Uluru",
+      "country": "Australia",
+      "average_temp": 32,
+      "distance_from_bratislava": 16064
+    },
+    {
+      "name": "Taj Mahal",
+      "country": "India",
+      "average_temp": 27,
+      "distance_from_bratislava": 5416
+    },
+    {
+      "name": "Great Wall of China",
+      "country": "China",
+      "average_temp": 12,
+      "distance_from_bratislava": 7448
+    },
+    {
+      "name": "Eiffel Tower",
+      "country": "France",
+      "average_temp": 15,
+      "distance_from_bratislava": 1241
+    },
+    {
+      "name": "Bora Bora",
+      "country": "French Polynesia",
+      "average_temp": 27,
+      "distance_from_bratislava": 18810
+    },
+    {
+      "name": "Angkor Wat",
+      "country": "Cambodia",
+      "average_temp": 27,
+      "distance_from_bratislava": 8785
+    },
+    {
+      "name": "Niagara Falls",
+      "country": "Canada",
+      "average_temp": 13,
+      "distance_from_bratislava": 6784
+    },
+    {
+      "name": "Yellowstone National Park",
+      "country": "USA",
+      "average_temp": 3,
+      "distance_from_bratislava": 8849
+    },
+    {
+      "name": "Serengeti National Park",
+      "country": "Tanzania",
+      "average_temp": 28,
+      "distance_from_bratislava": 6820
+    },
+    {
+      "name": "Galapagos Islands",
+      "country": "Ecuador",
+      "average_temp": 26,
+      "distance_from_bratislava": 11196
+    },
+    {
+      "name": "Chichen Itza",
+      "country": "Mexico",
+      "average_temp": 25,
+      "distance_from_bratislava": 9212
+    },
+    {
+      "name": "Sydney Opera House",
+      "country": "Australia",
+      "average_temp": 24,
+      "distance_from_bratislava": 16766
+    },
+    {
+      "name": "Marrakech",
+      "country": "Morocco",
+      "average_temp": 21,
+      "distance_from_bratislava": 2587
+    },
+    {
+      "name": "Halong Bay",
+      "country": "Vietnam",
+      "average_temp": 24,
+      "distance_from_bratislava": 8479
+    },
+    {
+      "name": "Aurora Borealis",
+      "country": "Norway",
+      "average_temp": -4,
+      "distance_from_bratislava": 2188
+    },
+    {
+      "name": "The Great Barrier Reef",
+      "country": "Australia",
+      "average_temp": 27,
+      "distance_from_bratislava": 16064
+    },
+    {
+      "name": "Zhangjiajie National Forest Park",
+      "country": "China",
+      "average_temp": 16,
+      "distance_from_bratislava": 7448
+    },
+    {
+      "name": "Plitvice Lakes National Park",
+      "country": "Croatia",
+      "average_temp": 13,
+      "distance_from_bratislava": 466
+    },
+    {
+      "name": "Chateau de Versailles",
+      "country": "France",
+      "average_temp": 12,
+      "distance_from_bratislava": 1241
+    }
+  ],
+
+
+
+
+
+  "turistika": [
+    {
+      "name": "Mount Kilimanjaro",
+      "country": "Tanzania",
+      "average_temp": 15,
+      "distance_from_bratislava": 6840
+    },
+    {
+      "name": "Inca Trail to Machu Picchu",
+      "country": "Peru",
+      "average_temp": 15,
+      "distance_from_bratislava": 10902
+    },
+    {
+      "name": "The Haute Route",
+      "country": "Switzerland/France",
+      "average_temp": 5,
+      "distance_from_bratislava": 1104
+    },
+    {
+      "name": "Overland Track",
+      "country": "Australia",
+      "average_temp": 10,
+      "distance_from_bratislava": 16750
+    },
+    {
+      "name": "Kalalau Trail",
+      "country": "USA (Hawaii)",
+      "average_temp": 25,
+      "distance_from_bratislava": 12767
+    },
+    {
+      "name": "Mount Everest Base Camp Trek",
+      "country": "Nepal",
+      "average_temp": -3,
+      "distance_from_bratislava": 5470
+    },
+    {
+      "name": "The Milford Track",
+      "country": "New Zealand",
+      "average_temp": 10,
+      "distance_from_bratislava": 18335
+    },
+    {
+      "name": "The West Highland Way",
+      "country": "Scotland",
+      "average_temp": 5,
+      "distance_from_bratislava": 1949
+    },
+    {
+      "name": "The Torres del Paine Circuit",
+      "country": "Chile",
+      "average_temp": 10,
+      "distance_from_bratislava": 13614
+    },
+    {
+      "name": "The W Trek",
+      "country": "Chile",
+      "average_temp": 10,
+      "distance_from_bratislava": 13614
+    },
+    {
+      "name": "Tongariro Alpine Crossing",
+      "country": "New Zealand",
+      "average_temp": 10,
+      "distance_from_bratislava": 18335
+    },
+    {
+      "name": "The Laugavegur Trek",
+      "country": "Iceland",
+      "average_temp": 5,
+      "distance_from_bratislava": 3560
+    },
+    {
+      "name": "The Tour du Mont Blanc",
+      "country": "France/Italy/Switzerland",
+      "average_temp": 5,
+      "distance_from_bratislava": 1006
+    },
+    {
+      "name": "The Annapurna Circuit",
+      "country": "Nepal",
+      "average_temp": 0,
+      "distance_from_bratislava": 5470
+    },
+    {
+      "name": "The Milford Track",
+      "country": "New Zealand",
+      "average_temp": 10,
+      "distance_from_bratislava": 18335
+    },
+    {
+      "name": "The Kalalau Trail",
+      "country": "USA (Hawaii)",
+      "average_temp": 25,
+      "distance_from_bratislava": 12767
+    },
+    {
+      "name": "The Alta Via 1",
+      "country": "Italy",
+      "average_temp": 10,
+      "distance_from_bratislava": 885
+    },
+    {
+      "name": "The Huayhuash Circuit",
+      "country": "Peru",
+      "average_temp": 5,
+      "distance_from_bratislava": 10902
+    },
+    {
+      "name": "The Everest Three Passes Trek",
+      "country": "Nepal",
+      "average_temp": -5,
+      "distance_from_bratislava": 5470
+    },
+    {
+      "name": "The West Coast Trail",
+      "country": "Canada",
+      "average_temp": 10,
+      "distance_from_bratislava": 8032
+    },
+    {
+      "name": "The Fitz Roy Trek",
+      "country": "Argentina",
+      "average_temp": 5,
+      "distance_from_bratislava": 12115
+    },
+    {
+      "name": "The Salkantay Trek",
+      "country": "Peru",
+      "average_temp": 10,
+      "distance_from_bratislava": 10902
+    },
+    {
+      "name": "The Annapurna Base Camp Trek",
+      "country": "Nepal",
+      "average_temp": 0,
+      "distance_from_bratislava": 5470
+    },
+    {
+      "name": "The Kepler Track",
+      "country": "New Zealand",
+      "average_temp": 10,
+      "distance_from_bratislava": 18335
+    },
+    {
+      "name": "The John Muir Trail",
+      "country": "USA (California)",
+      "average_temp": 10,
+      "distance_from_bratislava": 9428
+    }
+
+  ]
+}
+
