@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.extraInfoController">
+    <top>
+        <Text fx:id="text" fill="RED" layoutX="0" layoutY="0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="799.4224700927734" />
+    </top>
+
+    <center>
+        <WebView fx:id="webView" />
+    </center>
+</BorderPane>

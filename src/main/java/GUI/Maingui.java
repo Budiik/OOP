@@ -21,7 +21,8 @@ public class Maingui extends Application{
         root = loader.load();
         controller.setStage(primaryStage);
 
-        primaryStage.setTitle("yo");
+        primaryStage.setResizable(false);
+        primaryStage.setTitle("Cestovný plánovač");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }

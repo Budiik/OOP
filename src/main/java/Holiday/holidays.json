@@ -1,5 +1,5 @@
 {
-  "Lyžovanie": [
+  "lyžovanie": [
   {
     "name": "Whistler Blackcomb",
     "country": "Canada",
@@ -334,12 +334,6 @@
       "distance_from_bratislava": 11184
     },
     {
-      "name": "Santorini",
-      "country": "Greece",
-      "average_temp": 22,
-      "distance_from_bratislava": 1847
-    },
-    {
       "name": "Grand Canyon",
       "country": "USA",
       "average_temp": 13,
@@ -388,12 +382,6 @@
       "distance_from_bratislava": 8658
     },
     {
-      "name": "Sydney Opera House",
-      "country": "Australia",
-      "average_temp": 22,
-      "distance_from_bratislava": 16064
-    },
-    {
       "name": "Colosseum",
       "country": "Italy",
       "average_temp": 16,
@@ -416,12 +404,6 @@
       "country": "USA",
       "average_temp": 13,
       "distance_from_bratislava": 9697
-    },
-    {
-      "name": "Petra",
-      "country": "Jordan",
-      "average_temp": 25,
-      "distance_from_bratislava": 3409
     },
     {
       "name": "Uluru",

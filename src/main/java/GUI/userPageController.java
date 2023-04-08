@@ -33,6 +33,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.EventObject;
 import java.io.*;
 
@@ -46,7 +47,7 @@ public class userPageController extends controller{
     @FXML
     private Text username;
     @FXML
-    private Text level;
+    private Text numberOfOrders;
     @FXML
     private Text currentSettings;
     @FXML
@@ -55,6 +56,8 @@ public class userPageController extends controller{
     private Button customProfilePic;
     @FXML
     private VBox vBox;
+    @FXML
+    private Text level;
 
     User user;
     userPageController(User user){
@@ -85,16 +88,39 @@ public class userPageController extends controller{
         stage.show();
     }
     void updateNumberOfOrders() {
-        level.setText("Počet u nás vykonaných cieset je: " + user.getNumberOfOrders());
+        numberOfOrders.setText("Počet u nás vykonaných ciest je: " + user.getNumberOfOrders());
+    }
+    void updateLevel() {
+        if (user instanceof CoreUser) {
+            level.setText("Core user");
+        } else if (user instanceof RepeatedUser) {
+            level.setText("Repeated user");
+        } else {
+            level.setText("User");
+        }
+    }
+
+    void openExtraInfo(String name) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("extraInfo.fxml"));
+        Parent root = loader.load();
+        extraInfoController controller = loader.getController();
+        controller.loadWikipediaPage(name, user);
+
+        Stage newStage = new Stage();
+        newStage.setScene(new Scene(root));
+        newStage.show();
     }
 
     void loadHolidayOptions() throws IOException {
-        user.setHolidaysJson();
+
+        vBox.getChildren().clear();
+
+        user.setHolidaysJson(user);
         JSONArray holidayArray = user.getHolidaysJson();
         userManager.updateUser(user);
 
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < holidayArray.size(); i++) {
 
 
             JSONObject holiday = (JSONObject) holidayArray.get(i);
@@ -126,14 +152,25 @@ public class userPageController extends controller{
                 FileInputStream inputstream = new FileInputStream("src/main/images/" + name + "_image.jpg");
                 Image image = new Image(inputstream);
                 imageView.setImage(image);
+            }catch (Exception e) {
 
-            }catch (Exception e){
-                searchImage(name);
-                FileInputStream inputstream = new FileInputStream("src/main/images/" + name + "_image.jpg");
-                Image image = new Image(inputstream);
-                imageView.setImage(image);
+                Thread thread = new Thread(() -> {
+                    try {
+                        searchImage(name);
+                        FileInputStream inputstream = new FileInputStream("src/main/images/" + name + "_image.jpg");
+                        Image image = new Image(inputstream);
+                        imageView.setImage(image);
 
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
+
+                });
+
+                thread.start();
             }
+
 
             pane.getChildren().add(imageView);
 
@@ -148,7 +185,31 @@ public class userPageController extends controller{
             selectButton.setId("selectButton" + i);
             selectButton.setOnAction(event -> {
                 user.addNumberOfOrders(user);
+                if (user.getNumberOfOrders() == 5){
+                    RepeatedUser newUser = new RepeatedUser(user);
+                    userManager.deleteUser(user);
+                    userManager.addUser(newUser);
+                    user = newUser;
+                    updateLevel();
+                    try {
+                        loadHolidayOptions();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else if (user.getNumberOfOrders() == 10) {
+                    CoreUser newUser = new CoreUser(user);
+                    userManager.deleteUser(user);
+                    userManager.addUser(newUser);
+                    user = newUser;
+                    updateLevel();
+                    try {
+                        loadHolidayOptions();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
                 updateNumberOfOrders();
+                userManager.updateUser(user);
             });
             pane.getChildren().add(selectButton);
 
@@ -160,6 +221,13 @@ public class userPageController extends controller{
             changeButton.setPrefWidth(34.0);
             changeButton.setText("+");
             changeButton.setId("changeButton" + i);
+            changeButton.setOnAction(event -> {
+                try {
+                    openExtraInfo(name);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
             pane.getChildren().add(changeButton);
 
 
@@ -231,11 +299,11 @@ public class userPageController extends controller{
         fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         fileChooser.getExtensionFilters().addAll( new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
         File selectedFile = fileChooser.showOpenDialog(stage);
-        File destDir = new File("src/main/images");
+        File destDir = new File("src/main/profilePictures");
         String check = user.getProfilePic();
         if (selectedFile != null) {
 
-            Path fileToDelete = Paths.get("src/main/images/" + user.getProfilePic());
+            Path fileToDelete = Paths.get("src/main/profilePictures/" + user.getProfilePic());
 
             Path sourcePath = Paths.get(selectedFile.getAbsolutePath());
 
@@ -246,7 +314,7 @@ public class userPageController extends controller{
                 Files.copy(sourcePath, destPath);
                 user.setProfilePic(currentName);
                 userManager.updateUser(user);
-                FileInputStream inputstream2 = new FileInputStream("src/main/images/" + user.getProfilePic());
+                FileInputStream inputstream2 = new FileInputStream("src/main/profilePictures/" + user.getProfilePic());
                 Image image2 = new Image(inputstream2);
                 profPic.setImage(image2);
 
@@ -294,7 +362,7 @@ public class userPageController extends controller{
 
     public void initialize() throws IOException {
         loadHolidayOptions();
-
+        updateLevel();
 
 
         questionareButton.setOnAction(event -> {
@@ -307,7 +375,9 @@ public class userPageController extends controller{
         username.setText("Ahoj " + user.getUsername() + "!");
         updateNumberOfOrders();
 
-        currentSettings.setText(user.getHolidayType() + " | 200 - " + user.getPriceRange() + "€\n100 - " + user.getDistanceRange() + "km | " + user.getTemp() + "°C");
+        String plus = (user.getPriceRange() == 5000)?"+":"";
+
+        currentSettings.setText("Holyday Type: " + user.getHolidayType() + "\n\nPrice range: 200 - " + user.getPriceRange() + plus + "€\n\nPrefered temperature: " + user.getTemp() + "°C");
         logoutButton.setOnAction(event -> {
             try {
                 logout(event);
@@ -318,7 +388,7 @@ public class userPageController extends controller{
 
 
 
-        FileInputStream inputstream = new FileInputStream("src/main/images/" + user.getProfilePic());
+        FileInputStream inputstream = new FileInputStream("src/main/profilePictures/" + user.getProfilePic());
         Image image = new Image(inputstream);
         profPic.setImage(image);
         customProfilePic.setOnAction(event -> {

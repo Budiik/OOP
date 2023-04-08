@@ -8,6 +8,7 @@ module Projekt {
     requires com.almasb.fxgl.all;
     requires org.jsoup;
     requires json.simple;
+    requires javafx.web;
 
     opens GUI to javafx.fxml;
     exports GUI;

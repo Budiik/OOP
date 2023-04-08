@@ -28,8 +28,6 @@ public class questionareController extends controller {
     @FXML
     private Slider tempRange;
     @FXML
-    private Slider distanceRange;
-    @FXML
     private Slider priceRange;
     @FXML
     private Text tempNumber;
@@ -92,14 +90,6 @@ public class questionareController extends controller {
         tempRange.valueProperty().addListener((observable, oldValue, newValue) -> {
             user.setTemp(newValue.intValue());
             tempNumber.setText(String.valueOf(newValue.intValue()) + " °C");
-            userManager.updateUser(user);
-        });
-
-        distanceRange.setValue(user.getDistanceRange());
-        distanceNumber.setText(String.valueOf(user.getDistanceRange()) + " km");
-        distanceRange.valueProperty().addListener((observable, oldValue, newValue) -> {
-            user.setDistanceRange(newValue.intValue());
-            distanceNumber.setText(String.valueOf(newValue.intValue()) + " km");
             userManager.updateUser(user);
         });
 

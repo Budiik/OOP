@@ -13,7 +13,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.9.1</junit.version>
     </properties>
-
+    <repositories>
+        <repository>
+            <id>openjfx</id>
+            <url>https://repo.maven.apache.org/maven2/org/openjfx/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -30,6 +38,12 @@
             <artifactId>javafx-media</artifactId>
             <version>19</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>19.0.2.1</version>
+        </dependency>
+
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
@@ -74,6 +88,9 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
