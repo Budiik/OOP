@@ -38,8 +38,9 @@ public class UserManager {
                 }
             }
         }
-        return null;
+        throw new userNotFoundException();
     }
+
     public void deleteUser(User user) {
         users.remove(user);
         saveUsers();

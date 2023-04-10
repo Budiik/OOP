@@ -48,9 +48,8 @@ public class loginController extends controller {
         String usernameText = username.getText();
         String passwordText = password.getText();
 
-        User user = userManager.getUser(usernameText, passwordText);
-
-        if (user != null){
+        try{
+            User user = userManager.getUser(usernameText, passwordText);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("userPage.fxml"));
             userPageController controller = new userPageController(user);
             loader.setController(controller);
@@ -59,8 +58,8 @@ public class loginController extends controller {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        }else{
-            errorText.setText("Nesprávne meno alebo heslo");
+        }catch (userNotFoundException e) {
+            errorText.setText(e.getError());
         }
 
     }
